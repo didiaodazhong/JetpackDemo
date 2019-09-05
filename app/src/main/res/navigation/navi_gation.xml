@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/navi_gation"
+        app:startDestination="@id/fragment_main">
+    <fragment
+            android:id="@+id/fragment_main"
+            android:name="com.peixing.jetpackdemo.ui.main.MainFragment"
+            android:label="fragment_main"
+            tools:layout="@layout/main_fragment">
+
+        <action
+                android:id="@+id/action_fragmentA_to_fragmentB"
+                app:destination="@id/fragment_second"
+                app:enterAnim="@anim/suw_slide_next_in"
+                app:exitAnim="@anim/suw_slide_next_out" />
+        <argument
+                android:name="name"
+                android:defaultValue="baidu"
+                app:argType="string" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/fragment_second"
+            android:name="com.peixing.jetpackdemo.ui.main.SecondFragment"
+            android:label="fragment_second"
+            tools:layout="@layout/main_fragment">
+
+        <action
+                android:id="@+id/action_fragmentB_to_fragmentA"
+                app:destination="@id/fragment_main"
+                app:enterAnim="@anim/suw_slide_next_in"
+                app:exitAnim="@anim/suw_slide_next_out" />
+        <argument
+                android:name="name"
+                android:defaultValue="sina"
+                app:argType="string" />
+    </fragment>
+</navigation>
